@@ -15,11 +15,13 @@ A clean and minimal **To-Do based Notes App** built using **HTML, CSS, and JavaS
 
 Inspired by my hand-drawn wireframe and brought to life with code!
 
-![UI Sketch](https://github.com/Utkarsh-webdev/quick-notes-app/blob/main/assets/sketch.jpg)
+![Sketch](sketch.jpg)
+
+> 🧠 From concept to creation — this sketch was the blueprint that shaped the entire app!
 
 ## 🚀 Live Demo
 
-👉 [View Live on GitHub Pages](https://Utkarsh-webdev.github.io/quick-notes-app/)
+👉 [View Live on GitHub Pages](https://utkarsh-webdev.github.io/Quick-notes-app/)
 
 ## 🔧 Tech Stack
 
@@ -39,9 +41,11 @@ Inspired by my hand-drawn wireframe and brought to life with code!
 ## 📣 What's Special?
 
 This project showcases not just my coding skills but also:
-- My design-to-code thinking process 🧠
-- UX/UI decisions based on real use cases 🎯
-- Ability to convert wireframes into a working app 🎨➡💻
+
+- 🧠 My design-to-code thinking process
+- 🎯 UX/UI decisions based on real use cases
+- 🎨 Ability to convert wireframes into a working app
+- 💡 Clean, responsive layout that adapts to light & dark modes
 
 ---
 
@@ -49,9 +53,9 @@ This project showcases not just my coding skills but also:
 
 If you liked this project or want to collaborate, feel free to connect:
 
-🔗 [LinkedIn](https:/www.linkedin.com/in/jhautkarsh27)  
+🔗 [LinkedIn - Utkarsh Jha](https://www.linkedin.com/in/jhautkarsh27)  
 📧 [Email Me](mailto:utkarshjha832@gmail.com)
 
 ---
 
-⭐ Don’t forget to Star this repo if you find it useful!
+⭐ **Star this repo** if you find it useful and want to support my journey!
