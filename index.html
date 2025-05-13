@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quick Notes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">📝 QuickNotes</div>
+    <nav>
+  <label class="theme-switch">
+    <input type="checkbox" id="theme-toggle">
+    <span class="slider"></span>
+  </label>
+</nav>
+
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Organize your thoughts, effortlessly</h1>
+      <p>Write it down before you forget it.</p>
+    </section>
+
+    <form id="noteForm">
+      <input type="text" id="note-title" placeholder="Note Title" required />
+      <textarea id="note-content" placeholder="Write your note here..." required></textarea>
+      <button type="submit">Add Note</button>
+    </form>
+
+    <section id="notes-section">
+      <!-- Notes will be dynamically inserted here -->
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
