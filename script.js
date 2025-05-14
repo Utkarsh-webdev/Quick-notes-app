@@ -68,25 +68,40 @@ window.onload = loadNotes;
 
 
 // Theme Toggle Logic
-const toggle = document.getElementById("theme-toggle");
+const themeToggle = document.getElementById("theme-toggle");
 
-toggle.addEventListener("change", () => {
-  document.body.classList.toggle("light");
-
-  // Save user preference
-  if (document.body.classList.contains("light")) {
-    localStorage.setItem("theme", "light");
-  } else {
-    localStorage.setItem("theme", "dark");
-  }
-});
-
-// Load theme from localStorage
+// Apply saved theme on load
 window.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") {
-    document.body.classList.add("light");
-    toggle.checked = true;
-  }
+  const savedTheme = localStorage.getItem("theme") || "light";
+  document.body.classList.add(`${savedTheme}-mode`);
+  themeToggle.checked = savedTheme === "dark";
+  toggleIcons(savedTheme); // Update the icons based on the saved theme
 });
 
+
+// Toggle theme on click
+themeToggle.addEventListener("change", () => {
+  const isDark = themeToggle.checked;
+  const theme = isDark ? "dark" : "light";
+  document.body.classList.remove("light-mode", "dark-mode");
+  document.body.classList.add(`${theme}-mode`);
+  localStorage.setItem("theme", theme);
+  toggleIcons(theme); // Update icons on toggle
+});
+
+// Function to toggle the icons and move them
+function toggleIcons(theme) {
+  const sunIcon = document.querySelector(".fa-sun");
+  const moonIcon = document.querySelector(".fa-moon");
+  const ball = document.querySelector(".ball");
+  
+  if (theme === "dark") {
+    sunIcon.style.transform = "scale(0)";
+    moonIcon.style.transform = "scale(1.2)";
+    ball.style.transform = "translateX(30px)";
+  } else {
+    sunIcon.style.transform = "scale(1)";
+    moonIcon.style.transform = "scale(0)";
+    ball.style.transform = "translateX(0)";
+  }
+}
