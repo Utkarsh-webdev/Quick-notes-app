@@ -1,3 +1,4 @@
+/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -24,73 +26,98 @@ header {
   color: #ff6f61;
 }
 
-/* Toggle Switch Style */
-.theme-switch {
+/* 🌗 Toggle Container */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+/* Hide native checkbox */
+.theme-toggle input[type="checkbox"] {
+  display: none;
+}
+
+/* Toggle Slider Style */
+.toggle-label {
+  width: 60px;
+  height: 30px;
+  background-color: #ecc839;
+  border-radius: 50px;
   position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 26px;
-}
-
-.theme-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #555;
-  transition: 0.4s;
-  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.4s ease;
 }
 
-.slider::before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 4px;
-  bottom: 4px;
+/* Sun & Moon Icons */
+.toggle-label .fa-sun,
+.toggle-label .fa-moon {
+  font-size: 14px;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+/* Sun icon - Realistic sun color */
+.toggle-label .fa-sun {
+  color: #f9a825; /* Golden yellow for the sun */
+  transform: scale(1);
+}
+
+/* Moon icon - Realistic moon color */
+.toggle-label .fa-moon {
+  color: #b0bec5; /* Light grayish-blue for the moon */
+  transform: scale(0);
+}
+
+/* Ball/Knob */
+.toggle-label .ball {
+  width: 22px;
+  height: 22px;
   background-color: white;
-  transition: 0.4s;
   border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: transform 0.4s ease;
 }
 
-input:checked + .slider {
-  background-color: #4ea8de;
+/* Dark Mode Styles (checkbox checked) */
+input:checked + .toggle-label {
+  background-color: #2c3e50;
 }
 
-input:checked + .slider::before {
-  transform: translateX(24px);
+input:checked + .toggle-label .ball {
+  transform: translateX(30px);
 }
 
-/* Light Theme Styles */
-body.light {
-  background-color: #f9f9f9;
-  color: #1c1c1c;
+input:checked + .toggle-label .fa-sun {
+  transform: scale(0);
 }
 
-body.light header,
-body.light .note {
+input:checked + .toggle-label .fa-moon {
+  transform: scale(1.2);
+}
+
+/* Theme Body Styling */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.light-mode {
   background-color: #ffffff;
-  color: #1c1c1c;
+  color: #1a1a1a;
 }
 
-body.light nav button {
-  color: #1c1c1c;
-  border-color: #1c1c1c;
-}
-
-body.light input,
-body.light textarea {
-  background-color: #fff;
-  color: #000;
+/* Transition for smooth theme change */
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* Intro Section */
@@ -98,7 +125,7 @@ body.light textarea {
   margin-top: 2rem;
 }
 
-/* Form Styling */
+/* Form Styles */
 form {
   margin-top: 2rem;
   display: flex;
@@ -115,8 +142,8 @@ textarea {
   color: #f0f0f0;
 }
 
-body.light input,
-body.light textarea {
+body.light-mode input,
+body.light-mode textarea {
   background-color: #f0f0f0;
   color: #000;
 }
@@ -136,6 +163,7 @@ button[type="submit"]:hover {
   background: linear-gradient(135deg, #ff9478, #ff6f61);
 }
 
+/* Notes Grid */
 #notes-section {
   margin-top: 2rem;
   display: grid;
@@ -163,6 +191,10 @@ button[type="submit"]:hover {
   color: #4ea8de;
 }
 
+.note p {
+  white-space: pre-wrap;
+}
+
 .note-actions {
   margin-top: 1rem;
   display: flex;
@@ -178,7 +210,6 @@ button[type="submit"]:hover {
   transition: background 0.3s ease;
 }
 
-/* Edit button */
 .edit-btn {
   background-color: #4ea8de;
   color: white;
@@ -189,7 +220,6 @@ button[type="submit"]:hover {
   background-color: #3b8ac4;
 }
 
-/* Delete button */
 .delete-btn {
   background-color: #ff6f61;
   color: rgb(255, 249, 249);
